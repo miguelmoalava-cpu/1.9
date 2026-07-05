@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Una carta digital romantica para celebrar 1 año y 9 meses con Lola."
+    />
+    <title>Para Lola | 1 año y 9 meses</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23ffd9e3'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-size='34'%3E%E2%99%A1%3C/text%3E%3C/svg%3E"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="intro" id="intro" aria-live="polite">
+      <div class="intro__content">
+        <p class="intro__hello">Hola, Cafecito ❤️</p>
+        <p class="intro__hint">Tócame, miau 🐱</p>
+        <button class="magic-button" id="startButton" type="button">
+          Abrir tu regalo
+        </button>
+      </div>
+      <div class="intro__rain" id="catRain" aria-hidden="true"></div>
+      <div class="intro__sparkles" id="introSparkles" aria-hidden="true"></div>
+    </div>
+
+    <main class="page" id="page">
+      <div class="ambient ambient--petals" aria-hidden="true"></div>
+      <div class="ambient ambient--sparkles" aria-hidden="true"></div>
+
+      <section class="hero" aria-labelledby="heroTitle">
+        <div class="cloud cloud--one"></div>
+        <div class="cloud cloud--two"></div>
+        <span class="corner-cat corner-cat--left" aria-hidden="true">ฅ^•ﻌ•^ฅ</span>
+        <span class="corner-cat corner-cat--right" aria-hidden="true">♡</span>
+        <div class="section hero__inner reveal">
+          <p class="eyebrow">21 meses juntitos</p>
+          <h1 id="heroTitle">Lola, este mundo bonito es para ti</h1>
+          <p>
+            Una cartita, un album de recuerdos, un cielo magico y una pregunta
+            importante. Todo hecho con mucho amor, ternura y una cantidad
+            sospechosa de gatitos.
+          </p>
+          <a class="soft-link" href="#carta">Entrar al recuerdo</a>
+        </div>
+      </section>
+
+      <section class="memories section" id="carta" aria-labelledby="letterTitle">
+        <div class="letter-card reveal">
+          <p class="eyebrow">Carta para el amor de mi vida</p>
+          <h2 id="letterTitle">Mi chuiquita hermosa</h2>
+          <div
+            class="letter-text"
+            id="letterText"
+            data-letter="[AQUI PEGARE MI CARTA]"
+          ></div>
+          <span class="letter-cursor" aria-hidden="true"></span>
+        </div>
+
+        <div class="album reveal" aria-labelledby="albumTitle">
+          <div class="album__heading">
+            <p class="eyebrow">Album de recuerdos</p>
+            <h2 id="albumTitle">Pedacitos de nosotros</h2>
+          </div>
+          <div class="polaroid-grid" id="polaroidGrid"></div>
+          <button class="album-button" id="openGallery" type="button">
+            Ver todos nuestros recuerdos 📸
+          </button>
+        </div>
+      </section>
+
+      <section class="counter-section" aria-labelledby="counterTitle">
+        <div class="section reveal">
+          <p class="eyebrow">Desde el 4 de octubre de 2024</p>
+          <h2 id="counterTitle">Nuestro tiempo juntos ❤️</h2>
+          <div class="counter-grid" id="counterGrid">
+            <article><strong data-time="years">0</strong><span>Años</span></article>
+            <article><strong data-time="months">0</strong><span>Meses</span></article>
+            <article><strong data-time="days">0</strong><span>Días</span></article>
+            <article><strong data-time="hours">0</strong><span>Horas</span></article>
+            <article><strong data-time="minutes">0</strong><span>Minutos</span></article>
+            <article><strong data-time="seconds">0</strong><span>Segundos</span></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="night" id="noche" aria-labelledby="nightTitle">
+        <canvas id="fireworksCanvas" aria-hidden="true"></canvas>
+        <div class="stars" aria-hidden="true"></div>
+        <div class="section night__content reveal">
+          <p class="eyebrow">Cielo para celebrar</p>
+          <h2 id="nightTitle">Gracias por estos 21 meses, Lola ❤️</h2>
+          <p>
+            Que cada luz se parezca un poquito a todas las veces que me hiciste
+            sonreir sin darte cuenta.
+          </p>
+        </div>
+      </section>
+
+      <section class="question section" id="pregunta" aria-labelledby="questionTitle">
+        <div class="question-card reveal">
+          <span class="paw-print" aria-hidden="true">🐾</span>
+          <p class="eyebrow">Pregunta final</p>
+          <h2 id="questionTitle">¿Quieres seguir viviendo aventuras conmigo? ❤️</h2>
+          <p class="question-message" id="questionMessage" aria-live="polite">
+            Elige con sabiduria, Cafecito.
+          </p>
+          <div class="answer-zone" id="answerZone">
+            <button class="yes-button" id="yesButton" type="button">Sí ❤️</button>
+            <button class="no-button" id="noButton" type="button">No 🙄</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="gallery" id="gallery" aria-hidden="true" role="dialog" aria-label="Galeria de recuerdos">
+      <button class="gallery__close" id="closeGallery" type="button" aria-label="Cerrar galeria">×</button>
+      <button class="gallery__nav gallery__nav--prev" id="prevPhoto" type="button" aria-label="Foto anterior">‹</button>
+      <figure class="gallery__stage">
+        <img id="galleryImage" alt="" />
+        <figcaption id="galleryCaption"></figcaption>
+      </figure>
+      <button class="gallery__nav gallery__nav--next" id="nextPhoto" type="button" aria-label="Foto siguiente">›</button>
+      <div class="gallery__dots" id="galleryDots" aria-hidden="true"></div>
+    </div>
+
+    <div class="no-error" id="noError" aria-hidden="true">
+      <div>
+        <strong>Error 404</strong>
+        <span>Opción no disponible para Lola.</span>
+      </div>
+    </div>
+
+    <div class="finale" id="finale" aria-hidden="true">
+      <div class="finale__particles" id="finaleParticles" aria-hidden="true"></div>
+      <div class="finale__message" id="finaleMessage"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
